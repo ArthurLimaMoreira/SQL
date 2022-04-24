@@ -14,7 +14,7 @@ create database if not exists cadastro default character set utf8 default collat
 use cadastro;
 
 /*CASO NECESSÁRIO DELETAR ALGUMA TABELA, DESCOMENTAR A LINHA ESPERCÍFICA*/
-drop table if exists pessoas;
+#drop table if exists pessoas;
 
 /*  CRIAÇÃO DA TABELA PESSOAS  */
 create table if not exists pessoas (
