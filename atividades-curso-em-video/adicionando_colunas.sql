@@ -6,6 +6,8 @@ use cadastro;
 
 /*CASO NECESSÁRIO DELETAR ALGUMA TABELA, DESCOMENTAR A LINHA ESPERCÍFICA*/
 drop table if exists pessoas;
+drop table if exists people;
+drop table if exists cursos;
 
 /*  CRIAÇÃO DA TABELA PESSOAS  */
 create table if not exists pessoas (
@@ -66,3 +68,17 @@ desc pessoas;
 /*  RENOMEAR TABELA INTEIRA     */
 alter table pessoas rename to people;
 desc people;
+
+/*  CRAINDO TABELA CURSO SEM CHAVE PRIMÁRIA   */
+create table if not exists cursos(
+    nome varchar(30) not null unique,   # define nome como único, porém, não como chave primária
+    descricao text,
+    carga int unsigned,     #inteiro positivo (sem sinal), economiza 1 byte de armazenamento
+    totaulas int unsigned,
+    ano year default '2022'
+)default charset=utf8;
+
+/*  ADICIONANDO CHAVE PRIMÁRIA NA PRIMEIRA COLUNA   */
+alter table cursos add column id_curso int unsigned first;
+alter table cursos add primary key (id_curso);
+desc cursos;
