@@ -34,9 +34,13 @@ insert into pessoas values
 (default, 'Jean', '2003-02-15', 'M', '87.657', '1.83', 'França', 'Estudante');
 
 /*  MOSTRA TODA A TABELA PESSOAS   */
-#desc pessoas;
 select * from pessoas;
 
 /*  EXCLUINDO A COLUNA PROFISSAO    */
 alter table pessoas drop column profissao;
+select * from pessoas;
+
+/* READICIONANDO COLUNA PROFISSAO APÓS COLUNA NOME */
+alter table pessoas add column profissao varchar(10) default 'Estudante' after nome;
+desc pessoas;
 select * from pessoas;
