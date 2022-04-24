@@ -44,3 +44,21 @@ select * from pessoas;
 alter table pessoas add column profissao varchar(10) default 'Estudante' after nome;
 desc pessoas;
 select * from pessoas;
+
+/*  EXCLUINDO NOVAMENTE A COLUNA PROFISSAO    */
+alter table pessoas drop column profissao;
+select * from pessoas;
+
+/*  READICIONANDO COLUNA PROFISSAO COMO PRIMEIRA COLUNA  */
+alter table pessoas add column profissao varchar(10) default 'Estudante' first;
+desc pessoas;
+select * from pessoas;
+
+/*  ALTERANDO CARACTERISTICAS DA COLUNA PROFISSAO COMO PRIME    */
+alter table pessoas modify column profissao varchar(20) not null;
+desc pessoas;
+
+/*  MUDANDO NOME DA COLUNA PROFISSAO    */
+#   LEMBRANDO QUE É PRECISO RECONFIGURAR TODAS AS CONSTRAINS DA COLUNA PROFISSAO APÓS RENOMEÁ-LA
+alter table pessoas change column profissao prof varchar(20) not null default 'Estudante';
+desc pessoas;
