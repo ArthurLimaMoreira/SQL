@@ -62,3 +62,7 @@ desc pessoas;
 #   LEMBRANDO QUE É PRECISO RECONFIGURAR TODAS AS CONSTRAINS DA COLUNA PROFISSAO APÓS RENOMEÁ-LA
 alter table pessoas change column profissao prof varchar(20) not null default 'Estudante';
 desc pessoas;
+
+/*  RENOMEAR TABELA INTEIRA     */
+alter table pessoas rename to people;
+desc people;
