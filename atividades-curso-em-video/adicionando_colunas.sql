@@ -36,3 +36,7 @@ insert into pessoas values
 /*  MOSTRA TODA A TABELA PESSOAS   */
 #desc pessoas;
 select * from pessoas;
+
+/*  EXCLUINDO A COLUNA PROFISSAO    */
+alter table pessoas drop column profissao;
+select * from pessoas;
