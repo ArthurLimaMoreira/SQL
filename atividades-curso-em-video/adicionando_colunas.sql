@@ -54,7 +54,7 @@ alter table pessoas add column profissao varchar(10) default 'Estudante' first;
 desc pessoas;
 select * from pessoas;
 
-/*  ALTERANDO CARACTERISTICAS DA COLUNA PROFISSAO COMO PRIME    */
+/*  ALTERANDO CARACTERISTICAS DA COLUNA PROFISSAO    */
 alter table pessoas modify column profissao varchar(20) not null;
 desc pessoas;
 
